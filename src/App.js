@@ -1,12 +1,20 @@
-import React from 'react';
+import React,{ Component } from 'react';
+import { BrowserRouter , Route , Switch } from 'react-router-dom'; 
+import Admin from './pages/admin';
+import Login from './pages/login';
 
-function App() {
-  console.log('hello');
-  return (
-    <div className="App">
-      你好
-    </div>
-  );
+class App extends Component{
+
+  render(){
+    return(
+      <BrowserRouter>
+          <Switch>
+            <Route path='/login' component={Login}/>
+            <Route path='/' component={Admin}/>
+          </Switch>
+      </BrowserRouter>
+    )
+  }
 }
 
 export default App;
